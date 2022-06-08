@@ -22,7 +22,7 @@ export const QualitiesProvider = ({ children }) => {
             setQualities(content);
             setLoading(false);
         } catch (error) {
-            errorCatcher(error);
+            console.log(error);
         }
     }
 
@@ -38,10 +38,10 @@ export const QualitiesProvider = ({ children }) => {
         return qualityArray;
     }
 
-    function errorCatcher(error) {
-        const { message } = error.responce.data;
-        setError(message);
-    }
+    // function errorCatcher(error) {
+    //     const { message } = error.responce.data;
+    //     setError(message);
+    // }
     return (
         <QualityContext.Provider value={{ qualities, isLoading, getQualities }}>
             {children}
